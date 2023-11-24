@@ -70,5 +70,9 @@ resource "azurerm_resource_group_template_deployment" "logic_app" {
     }
   })
 
-  template_content = replace(workflowStructure, definitionElementToReplace, definitionElementReplaced)
+  template_content = replace(
+    local.workflowStructure,
+    local.definitionElementToReplace,
+    local.definitionElementReplaced
+  )
 }
