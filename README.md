@@ -32,4 +32,10 @@ You can set the `$AZURE_LOCATION` with the Azure region of your choice, I have u
 
 ## Check that everything is working fine
 
-Once the deployment is complete the best way to check is to run the Logic App from the Azure portal, and use the storage explorer (still from the Azure portal) from the Storage Account blade to check the content of the Azure Table.  
+Once the deployment is complete the best way to check is to run the Logic App from the Azure portal, and use the storage explorer (still from the Azure portal) from the Storage Account blade to check the content of the Azure Table.
+
+Invoke the app using cURL, you need to set the client IP address in the request header like so:
+
+```
+curl -X POST -H 'x-ms-client-ip-address: 1.1.1.1' https://logic-app-url.ms
+```
